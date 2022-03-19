@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Proza+Libre:ital,wght@0,400;0,500;1,400&display=swap");
+:root {
+  --primary-color: #fff;
+  --accent-color-primary: #fa370c;
+  --accent-color-secondary: rgb(101, 233, 182);
+  --bg-main: #edf2f8;
+  --bg-lightGray: #e4e4e4;
+  --bg-darkGray: #54595f;
+  --font-color: #000;
+
+  --heading-font: "Montserrat", sans-serif;
+  --body-font: "Proza Libre", sans-serif;
+}
+
+.dark-mode {
+  --primary-color: #000;
+  --bg-main: #000;
+  --font-color: #fff;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+

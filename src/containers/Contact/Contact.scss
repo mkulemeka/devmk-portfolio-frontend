@@ -1,0 +1,58 @@
+.app__contact {
+  flex-direction: column;
+  width: 100%;
+}
+
+.app__form {
+  width: 50%;
+
+  .form-group {
+    margin-top: 2rem;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+
+      border-radius: 5px;
+      border: 1px solid var(--primary-color);
+      outline: none;
+
+      color: var(--bg-dark);
+      font-size: 1rem;
+      font-family: var(--body-font);
+    }
+
+    input {
+      height: 3rem;
+    }
+
+    textarea {
+      height: 10rem;
+    }
+  }
+
+  .form-button {
+    width: 8rem;
+    height: 3rem;
+
+    border-radius: 5px;
+    border: 1px transparent;
+    background-color: var(--accent-color-primary);
+
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: var(--bg-main);
+
+    cursor: pointer;
+    outline: none;
+
+    transition: 0.5s ease-in-out;
+  }
+}
+
+form.app__form {
+  @media screen and (max-width: 950px) {
+    width: 90%;
+  }
+}

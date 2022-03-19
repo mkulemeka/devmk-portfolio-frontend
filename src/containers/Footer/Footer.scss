@@ -1,0 +1,23 @@
+.app__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.footer-icons {
+    padding: 0.5rem;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    svg {
+        font-size: 2rem;
+        color: var(--accent-color-primary);
+        margin: 0 0.5rem;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+            color: var(--bg-dark);
+        }
+    }
+}
