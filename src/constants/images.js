@@ -6,7 +6,7 @@ import sass from '../assets/sass.png';
 import profile from '../assets/port-img.png';
 import profile2 from '../assets/profile-img.png';
 
-export default {
+const images = {
   profile,
   profile2,
   portImage1,
@@ -15,3 +15,5 @@ export default {
   react,
   sass,
 };
+
+export default images;

@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { client } from "../../client";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
 import { Footer } from "../../containers/index";
 
 const Contact = () => {
-  const [contact, SetContact] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  useEffect(() => {
-    const query = '*[_type == "contact"]';
-    client.fetch(query).then((data) => {
-      SetContact(data);
-    });
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +38,7 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
   return (
-    <div className="app__contact" id="contact">
+    <motion.div whileInView={{y: [20, 0], opacity: [0, 1]}} transition={{duration: 1}} className="app__contact" id="contact">
       <h1 className='head-text'>Get <span>in</span> Touch</h1>
       <form className="app__form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -81,7 +72,7 @@ const Contact = () => {
         </div>
       </form>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
