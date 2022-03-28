@@ -12,7 +12,7 @@ import "./Footer.scss";
 const Footer = () => {
   const number = process.env.REACT_APP_PHONE_NUMBER;
   return (
-    <div className="app__footer" style={{marginTop : 50}}>
+    <div className="app__footer" style={{ marginTop: 50 }}>
       <p className="footer-copyright"> &copy; 2022 Devmk</p>
       <div className="footer-icons">
         <a href="https://www.facebook.com/kahle-kulemeka">

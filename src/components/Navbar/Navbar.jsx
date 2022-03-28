@@ -48,8 +48,13 @@ const Navbar = () => {
             <span className="nav-btn__burger"></span>
           </div>
           {toggle && (
-            <motion.div className={`menu ${toggle && 'open'}`} transition={{ duration: 2, ease: "ease" }}>
-              <motion.ul transition={{ delay: 1 }}>
+            <motion.div
+              className={`menu ${toggle && "open"}`}
+              initial={{ width: "0%", opacity: 0 }}
+              animate={{ width: "50%", opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ul>
                 {["home", "about", "skills", "work", "contact"].map((item) => (
                   <li key={item}>
                     <Link
@@ -64,7 +69,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
-              </motion.ul>
+              </ul>
             </motion.div>
           )}
         </div>
