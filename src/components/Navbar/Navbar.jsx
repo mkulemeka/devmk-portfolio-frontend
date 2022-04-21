@@ -53,6 +53,7 @@ const Navbar = () => {
               initial={{ width: "0%", opacity: 0 }}
               animate={{ width: "50%", opacity: 1 }}
               transition={{ duration: 0.5 }}
+              exit={{ width: "0%", opacity: 0 }}
             >
               <ul>
                 {["home", "about", "skills", "work", "contact"].map((item) => (
