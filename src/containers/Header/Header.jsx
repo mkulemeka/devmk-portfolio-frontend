@@ -40,14 +40,8 @@ const Header = () => {
           </div>
         </div>
         <div className="app__action">
-          <button className="app__action-contact">
-            <Link
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+          <button className="app__action-contact" type="button">
+            <Link activeClass="active" to="contact" spy smooth duration={500}>
               Contact Me
             </Link>
           </button>
@@ -59,7 +53,7 @@ const Header = () => {
         transition={{ duration: 1, delayChildren: 1 }}
         className="app__header-image"
       >
-        <img src={images.profile2} alt="Mtendere Kulemeka"/>
+        <img src={images.profile2} alt="Mtendere Kulemeka" />
       </motion.div>
 
       <motion.div

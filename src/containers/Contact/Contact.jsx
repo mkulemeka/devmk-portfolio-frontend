@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import "./Contact.scss";
+import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Footer } from "../../containers/index";
 
 const Contact = () => {
@@ -22,13 +22,12 @@ const Contact = () => {
         process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           alert("Messege sent");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
-          console.log(error.text);
+          alert(error.text);
         }
       );
   };
@@ -38,8 +37,15 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
   return (
-    <motion.div whileInView={{y: [20, 0], opacity: [0, 1]}} transition={{duration: 1}} className="app__contact" id="contact">
-      <h1 className='head-text'>Get <span>in</span> Touch</h1>
+    <motion.div
+      whileInView={{ y: [20, 0], opacity: [0, 1] }}
+      transition={{ duration: 1 }}
+      className="app__contact"
+      id="contact"
+    >
+      <h1 className="head-text">
+        Get <span>in</span> Touch
+      </h1>
       <form className="app__form" onSubmit={handleSubmit}>
         <div className="form-group">
           <input
@@ -68,7 +74,9 @@ const Contact = () => {
           />
         </div>
         <div className="form-group">
-          <button className="form-button">Submit</button>
+          <button className="form-button" type="submit">
+            Submit
+          </button>
         </div>
       </form>
       <Footer />

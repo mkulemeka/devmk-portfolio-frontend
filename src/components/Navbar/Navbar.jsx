@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Link, animateScroll as scroll } from "react-scroll";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "./Navbar.scss";
+
+import { MobileNav } from "../../components";
+import { AnimatePresence } from "framer-motion";
+
+import React, { useState } from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -13,18 +16,14 @@ const Navbar = () => {
     <div className="navbar">
       <nav className="app__nav">
         <div className="app__nav-logo">
-          <span onClick={scrollTop}>{"</>Devmk"}</span>
+          <span onClick={scrollTop} role="button">
+            {"</>Devmk"}
+          </span>
         </div>
         <ul className="app__nav-links">
           {["home", "about", "skills", "work", "contact"].map((item) => (
             <li key={item}>
-              <Link
-                activeClass="active"
-                to={item}
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
+              <Link activeClass="active" to={item} spy smooth duration={500}>
                 {item}
               </Link>
             </li>
@@ -44,35 +43,16 @@ const Navbar = () => {
           <div
             className={`nav-btn ${toggle ? "open" : ""}`}
             onClick={() => setToggle((prevState) => !prevState)}
+            role="button"
           >
-            <span className="nav-btn__burger"></span>
+            <span />
+            <span />
+            <span />
           </div>
-          {toggle && (
-            <motion.div
-              className="menu"
-              initial={{ width: "0%", opacity: 0 }}
-              animate={{ width: "50%", opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              exit={{ width: "0%", opacity: 0 }}
-            >
-              <ul>
-                {["home", "about", "skills", "work", "contact"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      activeClass="active"
-                      to={item}
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      onClick={() => setToggle((prevState) => !prevState)}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
+
+          <AnimatePresence>
+            {toggle && <MobileNav setToggle={setToggle} />}
+          </AnimatePresence>
         </div>
       </nav>
     </div>

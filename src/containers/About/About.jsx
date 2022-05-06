@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import "./About.scss";
 import { urlFor, client } from "../../client";
 import { motion } from "framer-motion";
-import "./About.scss";
+import React, { useEffect, useState } from "react";
 
 const About = () => {
   const [abouts, SetAbouts] = useState([]);
