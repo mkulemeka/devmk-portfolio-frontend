@@ -76,6 +76,9 @@
 
   .action {
     justify-content: flex-end;
+    &:focus {
+      border: 1px solid white;
+    }
   }
 
   .icon {

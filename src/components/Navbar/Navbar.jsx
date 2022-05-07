@@ -16,7 +16,7 @@ const Navbar = () => {
     <div className="navbar">
       <nav className="app__nav">
         <div className="app__nav-logo">
-          <span onClick={scrollTop} role="button">
+          <span onClick={scrollTop} onKeyDown={scrollTop} tabIndex={0} role="button">
             {"</>Devmk"}
           </span>
         </div>
@@ -31,10 +31,10 @@ const Navbar = () => {
         </ul>
 
         <div className="app__social-links">
-          <a href="https://www.linkedin.com/in/mtendere-kulemeka">
+          <a href="https://www.linkedin.com/in/mtendere-kulemeka" aria-label="LinkedIn">
             <FaLinkedinIn />
           </a>
-          <a href="https://www.github.com/mkulemeka">
+          <a href="https://www.github.com/mkulemeka" aria-label="Github">
             <FaGithub />
           </a>
         </div>
@@ -44,6 +44,8 @@ const Navbar = () => {
             className={`nav-btn ${toggle ? "open" : ""}`}
             onClick={() => setToggle((prevState) => !prevState)}
             role="button"
+            aria-label={toggle ? 'Close Navigation' : 'Open Navigation'}
+            tabIndex={0}
           >
             <span />
             <span />

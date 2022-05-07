@@ -40,11 +40,11 @@ const Header = () => {
           </div>
         </div>
         <div className="app__action">
-          <button className="app__action-contact" type="button">
-            <Link activeClass="active" to="contact" spy smooth duration={500}>
+          <Link activeClass="active" to="contact" spy smooth duration={500} tabIndex={0}>
+            <button className="app__action-contact" type="button">
               Contact Me
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </motion.div>
 

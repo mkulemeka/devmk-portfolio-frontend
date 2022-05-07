@@ -43,7 +43,7 @@ const Contact = () => {
       className="app__contact"
       id="contact"
     >
-      <h1 className="head-text">
+      <h1 className="head-text" style={{ marginTop: '2rem'}}>
         Get <span>in</span> Touch
       </h1>
       <form className="app__form" onSubmit={handleSubmit}>

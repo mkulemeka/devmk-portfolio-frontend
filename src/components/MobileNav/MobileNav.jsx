@@ -24,6 +24,7 @@ const MobileNav = ({setToggle}) => {
                 smooth
                 duration={500}
                 onClick={() => setToggle((prevState) => !prevState)}
+                tabIndex={0}
               >
                 {item}
               </Link>
