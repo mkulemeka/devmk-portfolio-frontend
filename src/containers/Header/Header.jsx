@@ -1,8 +1,8 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-scroll";
 import "./Header.scss";
 import { images } from "../../constants";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import React from "react";
 
 const Header = () => {
   const scaleVariants = {

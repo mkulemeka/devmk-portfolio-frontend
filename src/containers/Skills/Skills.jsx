@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { urlFor, client } from "../../client";
 import "./Skills.scss";
+import { urlFor, client } from "../../client";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const Skills = () => {
   const [skills, SetSkills] = useState([]);

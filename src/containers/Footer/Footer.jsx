@@ -1,13 +1,13 @@
-import React from "react";
+import "./Footer.scss";
 import {
   FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
   FaTwitter,
   FaWhatsapp,
-  FaGithub,
-  FaLinkedinIn,
-  FaInstagram,
 } from "react-icons/fa";
-import "./Footer.scss";
+import React from "react";
 
 const Footer = () => {
   const number = process.env.REACT_APP_PHONE_NUMBER;

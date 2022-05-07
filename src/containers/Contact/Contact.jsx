@@ -1,8 +1,8 @@
 import "./Contact.scss";
-import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
-import React, { useState, useCallback } from "react";
 import { Footer } from "../../containers/index";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import React, { useCallback, useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

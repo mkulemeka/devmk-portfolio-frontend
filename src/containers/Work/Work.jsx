@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { BsEye, BsCodeSlash } from "react-icons/bs";
-import { client, urlFor } from "../../client";
 import "./Work.scss";
+import { client, urlFor } from "../../client";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { BsCodeSlash, BsEye } from "react-icons/bs";
 
 const Work = () => {
   const [works, setWorks] = useState([]);
