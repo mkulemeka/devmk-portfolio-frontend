@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { Link} from "react-scroll";
 
-const MobileNav = ({setToggle}) => {
+const MobileNav = ({navigationState}) => {
   return (
     <>
       <motion.div
@@ -23,7 +23,7 @@ const MobileNav = ({setToggle}) => {
                 spy
                 smooth
                 duration={500}
-                onClick={() => setToggle((prevState) => !prevState)}
+                onClick={navigationState}
                 tabIndex={0}
               >
                 {item}

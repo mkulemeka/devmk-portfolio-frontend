@@ -1,7 +1,7 @@
 import "./Contact.scss";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Footer } from "../../containers/index";
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
 
     emailjs
@@ -30,12 +30,16 @@ const Contact = () => {
           alert(error.text);
         }
       );
-  };
+  }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const handleChange = useCallback(
+    (e) => {
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    },
+    [formData]
+  );
+
   return (
     <motion.div
       whileInView={{ y: [20, 0], opacity: [0, 1] }}
@@ -43,7 +47,7 @@ const Contact = () => {
       className="app__contact"
       id="contact"
     >
-      <h1 className="head-text" style={{ marginTop: '2rem'}}>
+      <h1 className="head-text" style={{ marginTop: "2rem" }}>
         Get <span>in</span> Touch
       </h1>
       <form className="app__form" onSubmit={handleSubmit}>

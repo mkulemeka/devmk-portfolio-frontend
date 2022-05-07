@@ -9,14 +9,25 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const scrollTop = () => {
+
+  function scrollTop() {
     scroll.scrollToTop();
-  };
+  }
+
+  function navigationState() {
+    setToggle((prevState) => !prevState);
+  }
+
   return (
     <div className="navbar">
       <nav className="app__nav">
         <div className="app__nav-logo">
-          <span onClick={scrollTop} onKeyDown={scrollTop} tabIndex={0} role="button">
+          <span
+            onClick={scrollTop}
+            onKeyDown={scrollTop}
+            tabIndex={0}
+            role="button"
+          >
             {"</>Devmk"}
           </span>
         </div>
@@ -31,7 +42,10 @@ const Navbar = () => {
         </ul>
 
         <div className="app__social-links">
-          <a href="https://www.linkedin.com/in/mtendere-kulemeka" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/mtendere-kulemeka"
+            aria-label="LinkedIn"
+          >
             <FaLinkedinIn />
           </a>
           <a href="https://www.github.com/mkulemeka" aria-label="Github">
@@ -42,9 +56,9 @@ const Navbar = () => {
         <div className="app__nav-menu">
           <div
             className={`nav-btn ${toggle ? "open" : ""}`}
-            onClick={() => setToggle((prevState) => !prevState)}
+            onClick={navigationState}
             role="button"
-            aria-label={toggle ? 'Close Navigation' : 'Open Navigation'}
+            aria-label={toggle ? "Close Navigation" : "Open Navigation"}
             tabIndex={0}
           >
             <span />
@@ -53,7 +67,7 @@ const Navbar = () => {
           </div>
 
           <AnimatePresence>
-            {toggle && <MobileNav setToggle={setToggle} />}
+            {toggle && <MobileNav navigationState={navigationState} />}
           </AnimatePresence>
         </div>
       </nav>
